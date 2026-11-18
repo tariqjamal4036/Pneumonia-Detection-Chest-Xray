@@ -57,8 +57,6 @@ def load_xray_validator():
         model="openai/clip-vit-base-patch32",
         framework="pt",
     )
-
-
 def is_chest_xray(image):
     validator = load_xray_validator()
     scores = {
@@ -66,7 +64,6 @@ def is_chest_xray(image):
         for result in validator(image, candidate_labels=XRAY_CANDIDATE_LABELS)
     }
     return scores[XRAY_LABEL] >= scores[NON_XRAY_LABEL]
-
 
 def predict(image):
     image = image.resize((224, 224))
