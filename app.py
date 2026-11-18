@@ -1,8 +1,10 @@
 import streamlit as st
 import tensorflow as tf
 import numpy as np
+import torch 
 from PIL import Image
 from transformers import pipeline
+
 
 XRAY_LABEL = "a medical chest x-ray radiograph"
 NON_XRAY_LABEL = (
